@@ -24,13 +24,12 @@ Yandex Maps API - djeoEngine:'ymaps'
 <script src="../dojo/dojo.js" data-dojo-config="djeoEngine:'djeo', paths:{djeo:'../djeo'}"></script>
 
 <script>
-// always include the next line if you plan to use Google Earth browser plugin
-if (dojo.config.djeoEngine=="ge") dojo.require("djeo.ge.Engine");
-
-dojo.require("djeo.Map");
-dojo.require("djeo.control.Navigation");
-dojo.require("djeo.control.Highlight");
-dojo.require("djeo.control.Tooltip");
+require([
+	"djeo/Map",
+	"djeo/control/Navigation",
+	"djeo/control/Highlight",
+	"djeo/control/Tooltip"
+]);
 
 var features = [
 	{
