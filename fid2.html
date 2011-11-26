@@ -5,11 +5,19 @@
 <link rel="stylesheet" href="../dijit/themes/claro/claro.css"/>
 
 <!--
-Supported mapping engines (replace the value for djeoEngine parameter)
-djeo native mapping engine - djeoEngine:'djeo'
-Google Maps API - djeoEngine:'gmaps'
-Google Earth API - djeoEngine:'ge' - apply for a key at http://code.google.com/apis/maps/signup.html
-Yandex Maps API - djeoEngine:'ymaps' - apply for a key at http://api.yandex.ru/maps/form.xml
+Supported mapping engines (replace the value for the djeoEngine parameter):
+
+djeo native mapping engine - djeoEngine: 'djeo'
+
+Google Maps API - djeoEngine: 'gmaps'
+
+Google Earth API - djeoEngine: 'ge'
+Important: apply for a key at http://code.google.com/apis/maps/signup.html and
+place it as the value of the geKey parameter
+
+Yandex Maps API - djeoEngine: 'ymaps'
+Important: apply for a key at http://api.yandex.ru/maps/form.xml and
+place it as the value of the ymapsKey parameter
 -->
 <script src="../dojo/dojo.js" data-dojo-config="
 	djeoEngine: 'djeo',
@@ -19,13 +27,6 @@ Yandex Maps API - djeoEngine:'ymaps' - apply for a key at http://api.yandex.ru/m
 </script>
 
 <script>
-require([
-	"djeo/Map",
-	"djeo/control/Navigation",
-	"djeo/control/Highlight",
-	"djeo/control/Tooltip"
-]);
-
 var features = [
 	{
 		name: "Top container",
@@ -71,9 +72,16 @@ var style = [
 		size: [49, 60],
 		img: "http://vvoovv.github.com/ship.png"
 	}
-]
+];
 
-dojo.ready(function(){
+require([
+	"djeo/Map",
+	"djeo/control/Navigation",
+	"djeo/control/Highlight",
+	"djeo/control/Tooltip",
+	"dojo/domReady!"
+],
+function(){
     var map = new djeo.Map("map", {
         features: features,
 		style: style
