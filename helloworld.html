@@ -28,35 +28,35 @@ place it as the value of the ymapsKey parameter
 
 <script>
 var features = [
-    {
-        name: "Bermuda triangle",
-        type: "Polygon",
-        coords: [ [ [-64.89,32.24], [-80.15,25.7], [-66.07,18.46], [-64.89,32.24] ] ],
-        style: {
-            fill: "lime",
-            fillOpacity: 0.6,
-            stroke: "green",
-            strokeWidth: 3
-        }
-    },
-    {
-        name: "Paris-London railway",
-        type: "LineString",
-        coords: [ [2.36,48.88], [3.08,50.64], [1.81,50.90], [0.87,51.14], [-0.13,51.53] ],
-        style: {
-            stroke: "red",
-            strokeWidth: 2
-        }
-    },
-    {
-        name: "Hello world!",
-        type: "Point",
-        coords: [-30, 30],
-        style: {
-            size: [49, 60],
-            img: "http://vvoovv.github.com/ship.png"
-        }
-    }
+	{
+		name: "Bermuda triangle",
+		type: "Polygon",
+		coords: [ [ [-64.89,32.24], [-80.15,25.7], [-66.07,18.46], [-64.89,32.24] ] ],
+		style: {
+			fill: "lime",
+			fillOpacity: 0.6,
+			stroke: "green",
+			strokeWidth: 3
+		}
+	},
+	{
+		name: "Paris-London railway",
+		type: "LineString",
+		coords: [ [2.36,48.88], [3.08,50.64], [1.81,50.90], [0.87,51.14], [-0.13,51.53] ],
+		style: {
+			stroke: "red",
+			strokeWidth: 2
+		}
+	},
+	{
+		name: "Hello world!",
+		type: "Point",
+		coords: [-30, 30],
+		style: {
+			size: [49, 60],
+			img: "http://vvoovv.github.com/ship.png"
+		}
+	}
 ];
 
 require([
@@ -67,14 +67,14 @@ require([
 	"dojo/domReady!"
 ],
 function(){
-    var map = new djeo.Map("map", {
-        features: features
-    });
-    map.ready(function(){
-        new djeo.control.Navigation(map);
-        new djeo.control.Highlight(map);
-        new djeo.control.Tooltip(map);
-    });
+	var map = new djeo.Map("map", {
+		features: features
+	});
+	map.ready(function(){
+		new djeo.control.Navigation(map);
+		new djeo.control.Highlight(map);
+		new djeo.control.Tooltip(map);
+	});
 });
 </script>
 

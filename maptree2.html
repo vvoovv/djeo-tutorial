@@ -83,15 +83,15 @@ require([
 	"djeo/control/Tooltip",
 	"dojo/domReady!"
 ],
-function(){
-    var map = new djeo.Map("map", {
-        features: features
-    });
-    map.ready(function(){
-        new djeo.control.Navigation(map);
-        new djeo.control.Highlight(map);
-        new djeo.control.Tooltip(map);
-    });
+	function(){
+	var map = new djeo.Map("map", {
+		features: features
+	});
+	map.ready(function(){
+		new djeo.control.Navigation(map);
+		new djeo.control.Highlight(map);
+		new djeo.control.Tooltip(map);
+	});
 });
 </script>
 

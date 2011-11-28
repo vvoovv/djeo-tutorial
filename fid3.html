@@ -82,15 +82,15 @@ require([
 	"dojo/domReady!"
 ],
 function(){
-    var map = new djeo.Map("map", {
-        features: features,
+	var map = new djeo.Map("map", {
+		features: features,
 		style: style
-    });
-    map.ready(function(){
-        new djeo.control.Navigation(map);
-        new djeo.control.Highlight(map);
-        new djeo.control.Tooltip(map);
-    });
+	});
+	map.ready(function(){
+		new djeo.control.Navigation(map);
+		new djeo.control.Highlight(map);
+		new djeo.control.Tooltip(map);
+	});
 });
 </script>
 
