@@ -12,8 +12,6 @@ djeo native mapping engine - djeoEngine: 'djeo'
 Google Maps API - djeoEngine: 'gmaps'
 
 Google Earth API - djeoEngine: 'ge'
-Important: apply for a key at http://code.google.com/apis/maps/signup.html and
-place it as the value of the geKey parameter
 
 Yandex Maps API - djeoEngine: 'ymaps'
 Important: apply for a key at http://api.yandex.ru/maps/form.xml and
@@ -21,10 +19,9 @@ place it as the value of the ymapsKey parameter
 -->
 <script src="../dojo/dojo.js" data-dojo-config="
 	djeoEngine: 'djeo',
-	geKey: 'ABQIAAAA-DMAtggvLwlIYlUJiASaAxRQnCpeV9jusWIeBw0POFqU6SItGxRWZhddpS8pIkVUd2fDQhzwPUWmMA',
-	ymapsKey: 'AMOPgE4BAAAA9Y-BUwMAonjZ5NBRJDj54c-cDVPzQcYlLNAAAAAAAAAAAACPSuKS9WyCiMuXm9An1ZKCx5Pk-A==',
-	paths: {djeo:'../djeo'}">
-</script>
+	async: true,
+	ymapsKey: 'AMOPgE4BAAAA9Y-BUwMAonjZ5NBRJDj54c-cDVPzQcYlLNAAAAAAAAAAAACPSuKS9WyCiMuXm9An1ZKCx5Pk-A=='
+"></script>
 
 <script>
 var features = [
@@ -81,15 +78,15 @@ require([
 	"djeo/control/Tooltip",
 	"dojo/domReady!"
 ],
-function(){
-	var map = new djeo.Map("map", {
+function(Map, Navigation, Highlight, Tooltip){
+	var map = new Map("map", {
 		features: features,
 		style: style
 	});
 	map.ready(function(){
-		new djeo.control.Navigation(map);
-		new djeo.control.Highlight(map);
-		new djeo.control.Tooltip(map);
+		new Navigation(map);
+		new Highlight(map);
+		new Tooltip(map);
 	});
 });
 </script>
