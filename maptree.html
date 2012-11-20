@@ -7,20 +7,18 @@
 <!--
 Supported mapping engines (replace the value for the djeoEngine parameter):
 
-djeo native mapping engine - djeoEngine: 'djeo'
+Leaflet - djeoEngine: 'leaflet'
 
 Google Maps API - djeoEngine: 'gmaps'
 
 Google Earth API - djeoEngine: 'ge'
 
+ArcGIS API for JavaScript - djeoEngine: 'esri'
+
 Yandex Maps API - djeoEngine: 'ymaps'
-Important: apply for a key at http://api.yandex.ru/maps/form.xml and
-place it as the value of the ymapsKey parameter
 -->
 <script src="../dojo/dojo.js" data-dojo-config="
-	djeoEngine: 'djeo',
-	async: true,
-	ymapsKey: 'AMOPgE4BAAAA9Y-BUwMAonjZ5NBRJDj54c-cDVPzQcYlLNAAAAAAAAAAAACPSuKS9WyCiMuXm9An1ZKCx5Pk-A=='
+	djeoEngine: 'leaflet'
 "></script>
 
 <script>
@@ -77,7 +75,9 @@ require([
 ],
 function(Map, Navigation, Highlight, Tooltip){
 	var map = new Map("map", {
-		features: features
+		features: features,
+		layers: "roadmap"
+		//layers: "webtiles:http://[a,b,c].tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/1/256"
 	});
 	map.ready(function(){
 		new Navigation(map);
